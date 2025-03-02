@@ -14,19 +14,19 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Persist the GameManager across scenes
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
+    // increment score in canvas UI text 
     public void IncrementScore(int amount)
     {
         score += amount;
         scoreText.text = $"Score: {score}";
-        Debug.Log("Score: " + score);
+        Debug.Log("Coin collected! +1 score");
     }
 
     public float GetScore()
